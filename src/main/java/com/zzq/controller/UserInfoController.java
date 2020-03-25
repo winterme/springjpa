@@ -16,13 +16,19 @@ public class UserInfoController {
 
     @RequestMapping("/add")
     @ResponseBody
-    public Object add(){
+    public Object add() {
         UserInfo userInfo = new UserInfo();
         userInfo.setUsername("zhangzq");
         userInfo.setPassword("pkusoft");
         userInfo.setTitle("javaer,小菜鸟");
         int i = this.userInfoService.insert(userInfo);
         return i;
+    }
+
+    @RequestMapping("/getAll")
+    @ResponseBody
+    public Object getAll() {
+        return this.userInfoService.getAll();
     }
 
 }
